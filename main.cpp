@@ -3,24 +3,24 @@
 //#include "SDL2/SDL_mixer.h"
 //#include "SDL2/SDL_ttf.h"
 #include "Game.h"
+#include "Rect.h"
+#include "Vec2.h"
 #include <iostream>
 
+//void test(){
+//    Vec2* v1 = new Vec2(5, -3);
+//    Vec2* v2 = new Vec2(-2, 1);
+//    Vec2* v3 = v1->multiplyByScalar(v1, 3);
+
+//    std::cout << "resultado: x: " << v3->x << ", y: " << v3->y << "." << std::endl;
+//    std::cout << "magnitude: " << v1->getMagnitude() << std::endl;
+//}
 
 int main (int argc, char** argv) {
 
-//    /* Inicializa todas as bibliotecas */
-//    SDL_Init(SDL_INIT_EVERYTHING);
-//    IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF);
-//    Mix_Init(MIX_INIT_FLAC | MIX_INIT_MP3 | MIX_INIT_OGG);
-//    TTF_Init();
-
-//    /* Fecha todas */
-//    TTF_Quit();
-//    Mix_Quit();
-//    IMG_Quit();
-//    SDL_Quit();
-
     Game game = Game::GetInstance();
+
+//    test();
 
     game.Run();
 
