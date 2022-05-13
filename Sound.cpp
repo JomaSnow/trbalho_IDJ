@@ -3,7 +3,7 @@
 #include <fstream>
 
 Sound::Sound(GameObject& associated):Component(associated){
-    this->associated = associated;
+//    this->associated = associated;
     this->chunk = nullptr;
 }
 

@@ -3,6 +3,7 @@
 #include "Rect.h"
 //#include "Component.h"
 #include <string>
+#include <memory>
 #include <vector>
 
 //https://stackoverflow.com/questions/8526819/c-header-files-including-each-other-mutually

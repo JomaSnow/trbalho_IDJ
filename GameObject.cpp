@@ -8,8 +8,7 @@ GameObject::GameObject(){
 
 GameObject::~GameObject(){
     int vecLen = this->components.size();
-    int i;
-    for(i=vecLen;i>0;i--){
+    for(int i = vecLen -1; i >= 0; i--){
         delete this->components[i];
     }
     this->components.clear();
@@ -17,16 +16,14 @@ GameObject::~GameObject(){
 
 void GameObject::Update(float dt){
     int vecLen = this->components.size();
-    int i;
-    for(i=0;i<vecLen;i++){
+    for(int i = 0; i < vecLen; i++){
         this->components[i]->Update(dt);
     }
 }
 
 void GameObject::Render(){
     int vecLen = this->components.size();
-    int i;
-    for(i=0;i<vecLen;i++){
+    for(int i = 0; i < vecLen; i++){
         this->components[i]->Render();
     }
 }
@@ -49,8 +46,7 @@ void GameObject::RemoveComponent(Component* cpt){
 
 Component* GameObject::GetComponent(std::string type){
     int vecLen = this->components.size();
-    int i;
-    for(i=0;i<vecLen;i++){
+    for(int i = 0; i < vecLen; i++){
         if(this->components[i]->Is(type)){
             return this->components[i];
         }

@@ -25,3 +25,10 @@ void Rect::setPos(float x, float y){
     this->x=x;
     this->y=y;
 }
+
+bool Rect::Contains(float x, float y){
+    if(x>=this->x&&x<=this->x+this->w&&y>=this->y&&y<=this->y+this->h){
+        return true;
+    }
+    return false;
+}

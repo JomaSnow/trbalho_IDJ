@@ -9,6 +9,7 @@ public:
     Rect();
     Rect(float w, float h);
     void setPos(float x, float y);
+    bool Contains(float x, float y);
 };
 
 #endif // RECT_H

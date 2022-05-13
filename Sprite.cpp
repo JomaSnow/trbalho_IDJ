@@ -10,10 +10,11 @@
 
 Sprite::Sprite(GameObject& associated):Component(associated){
     texture = nullptr;
+//    this->associated=associated;
 }
 
 Sprite::Sprite(GameObject& associated, const char* file):Component(associated){
-    texture = nullptr;
+    new Sprite(associated);
     Sprite::Open(file);
     if(this->IsOpen()){
         associated.box.h=this->GetHeight();

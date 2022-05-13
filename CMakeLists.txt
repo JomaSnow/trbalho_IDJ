@@ -15,4 +15,4 @@ add_executable(sdl main.cpp SDL_include.h Game.h Game.cpp
     img/ocean.jpg audio/stageState.ogg Rect.h Rect.cpp
     Vec2.h Vec2.cpp Component.h Component.cpp
     GameObject.h GameObject.cpp Sound.h Sound.cpp
-    Face.h Face.cpp)
+    Face.h Face.cpp img/penguinface.png audio/boom.wav)

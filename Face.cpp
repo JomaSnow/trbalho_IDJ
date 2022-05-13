@@ -2,7 +2,7 @@
 #include "Sound.h"
 
 Face::Face(GameObject& associated):Component(associated){
-    this->associated = associated;
+//    this->associated = associated;
     this->hitpoints = 30;
 }
 

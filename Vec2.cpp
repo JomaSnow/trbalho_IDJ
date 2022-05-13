@@ -37,3 +37,18 @@ Vec2* Vec2::multiplyByScalar(Vec2* v1, float s){
 float Vec2::getMagnitude(){
     return std::sqrt(std::pow(this->x, 2)+std::pow(this->y,2));
 }
+
+Vec2* Vec2::GetRotated(float angle){
+    // | cos()  -sen() |   |x|
+    // | sen()   cos() | * |y|
+
+    float cos = std::cos(angle);
+    float sen = std::sin(angle);
+
+    float x = cos*this->x + (-1)*sen*this->y;
+    float y = sen*this->x + cos*this->y;
+
+    Vec2* vR = new Vec2(x, y);
+
+    return vR;
+}
