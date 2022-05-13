@@ -5,13 +5,17 @@
 
 // se não tiver desenhando mais que o bg é pq tem q usar this nas chamadas de funções, preview pros trabs 2, 3, etc.
 
-Sprite::Sprite(){
+Sprite::Sprite(GameObject& associated):Component(associated){
     texture = nullptr;
 }
 
-Sprite::Sprite(const char* file){
+Sprite::Sprite(GameObject& associated, const char* file):Component(associated){
     texture = nullptr;
     Sprite::Open(file);
+    if(this->IsOpen()){
+        associated.box.h=this->GetHeight();
+        associated.box.w=this->GetWidth();
+    }
 }
 
 Sprite::~Sprite(){
@@ -43,10 +47,10 @@ void Sprite::SetClip(int x, int y, int w, int h){
     clipRect.h=h;
 }
 
-void Sprite::Render(int x, int y){
+void Sprite::Render(){
     SDL_Rect dstrect;
-    dstrect.x=x;
-    dstrect.y=y;
+    dstrect.x=associated.box.x;
+    dstrect.y=associated.box.y;
     dstrect.w=clipRect.w;
     dstrect.h=clipRect.h;
     SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstrect);
@@ -62,6 +66,15 @@ int Sprite::GetHeight(){
 
 bool Sprite::IsOpen(){
     if(texture!=nullptr){
+        return true;
+    }
+    return false;
+}
+
+void Update (float dt){}
+
+bool Is(std::string type){
+    if(type=="Sprite"){
         return true;
     }
     return false;

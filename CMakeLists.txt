@@ -13,4 +13,5 @@ link_libraries(Mingw32 SDL2main SDL2_image SDL2_ttf SDL2_mixer SDL2)
 add_executable(sdl main.cpp SDL_include.h Game.h Game.cpp
     State.h State.cpp Sprite.h Sprite.cpp Music.h Music.cpp
     img/ocean.jpg audio/stageState.ogg Rect.h Rect.cpp
-    Vec2.h Vec2.cpp Component.h Component.cpp)
+    Vec2.h Vec2.cpp Component.h Component.cpp
+    GameObject.h GameObject.cpp)

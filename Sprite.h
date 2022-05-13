@@ -3,9 +3,10 @@
 #define INCLUDE_SDL
 #define INCLUDE_SDL_IMAGE
 #include "SDL_include.h"
+#include "Component.h"
 
 
-class Sprite{
+class Sprite : public Component{
 private:
     SDL_Texture* texture;
     int width;
@@ -13,12 +14,12 @@ private:
     SDL_Rect clipRect;
 
 public:
-    Sprite();
-    Sprite(const char* file);
+    Sprite(GameObject& associated);
+    Sprite(GameObject& associated, const char* file);
     ~Sprite();
     void Open(const char* file);
     void SetClip(int x, int y, int w, int h);
-    void Render(int x, int y);
+    void Render();
     int GetWidth();
     int GetHeight();
     bool IsOpen();

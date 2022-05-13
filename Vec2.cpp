@@ -16,7 +16,6 @@ Vec2::Vec2(float x, float y){
     this->y = y;
 }
 
-
 Vec2* Vec2::addVecs(Vec2* v1, Vec2* v2){
     Vec2* vR = new Vec2(v1->x+v2->x, v1->y+v2->y);
 
