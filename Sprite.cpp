@@ -4,6 +4,9 @@
 #include <fstream>
 
 // se não tiver desenhando mais que o bg é pq tem q usar this nas chamadas de funções, preview pros trabs 2, 3, etc.
+// ou talvez pq tem q ser Sprite::Update sei la
+// update: não precisa chamar Component::Update pq ela é virtual e foi feita pra ser overwriten.
+// update 2: talvez no segundo construtor tenha que chamar o primeiro, q nem fiz em Sound.
 
 Sprite::Sprite(GameObject& associated):Component(associated){
     texture = nullptr;
